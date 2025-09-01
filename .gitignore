@@ -1,0 +1,11 @@
+*.xlsx
+*.xls
+*.csv
+*.py
+*.ipynb
+*.pdf
+*.R
+*.Rmd
+__pycache__/
+*.tmp
+mapas/
