@@ -1,0 +1,55 @@
+p {
+  text-align: justify;
+}
+
+p, li {
+  text-align: justify;
+}
+
+/* Primera columna: encabezado normal, registros en gris y negrita */
+.table th:nth-child(1) {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    font-weight: bold;   /* negrita para encabezado */
+    color: black;        /* color del encabezado */
+}
+
+.table td:nth-child(1) {
+    background-color: #f0f0f0; /* gris claro para registros */
+    font-weight: bold;          /* negrita */
+    color: #555;                /* gris oscuro */
+}
+
+/* Reducir tamaño de fuente y evitar saltos de línea */
+.table th, .table td {
+    font-size: 0.75rem;    /* más pequeña para compactar */
+    white-space: nowrap;    /* evita que el texto se divida en varias líneas */
+}
+
+/* Opcional: scroll horizontal si la tabla es muy ancha */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Solo afecta a la tabla con id 'tabla_no_asignados' */
+#tabla_no_asignados {
+    width: auto;           /* ancho según contenido */
+    max-width: 800px;      /* ancho máximo */
+    table-layout: auto;    /* columnas se ajustan al contenido */
+    margin: 20px auto;     /* centrada horizontalmente con espacio arriba/abajo */
+}
+
+#tabla_no_asignados th,
+#tabla_no_asignados td {
+    padding: 6px 12px;     /* padding ajustado */
+    text-align: left;
+}
+
+#tabla_no_asignados caption {
+    caption-side: bottom;  /* pone la leyenda debajo */
+    text-align: left;       /* opcional, para alinearla al inicio */
+    font-style: italic;     /* opcional, estilo de leyenda */
+    margin-top: 4px;
+}
