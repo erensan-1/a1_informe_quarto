@@ -3,6 +3,7 @@
 !a1_informe.html
 !styles.css
 !a1_informe_files/
+!mapas/**
 
 # Todo lo demás que ya ignorabas
 *.xlsx
@@ -10,9 +11,7 @@
 *.csv
 *.py
 *.ipynb
-*.pdf
 *.R
 *.Rmd
 __pycache__/
 *.tmp
-mapas/
