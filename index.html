@@ -9,6 +9,7 @@
 <meta name="author" content="Enrique Reñé Sánchez (Técnico SIG)">
 <meta name="author" content="Cristian González Alonso (Ingeniero de datos)">
 <meta name="author" content="Juan Jorge Rosales León (Dirección técnica)">
+<meta name="dcterms.date" content="2025-09-01">
 
 <title>Metodología empleada para la resolución de la Tarea A1 ‘Hogares sin CIV’</title>
 <style>
@@ -75,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <style>
 
       .quarto-title-block .quarto-title-banner {
-        background-image: url(S:/Enrique/FONDOS/INFORME TECNICO/FONDO_IT_1.png);
+        background-image: url(mapas/FONDO_IT_1.png);
 background-size: cover;
       }
 </style>
@@ -84,7 +85,7 @@ background-size: cover;
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="C:\padron\data\vscode\padron_online\A1\styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="quarto-light">
@@ -105,7 +106,7 @@ background-size: cover;
     </div>
     <div class="quarto-title-meta-contents">
           <p class="affiliation">
-              <img src="S:/Enrique/logos/GRAFCANa_logo_color.png" class="img-fluid" style="width:1in" alt="GRAFCAN Logo">
+              <img src="mapas/GRAFCANa_logo_color.png" class="img-fluid" style="width:1in" alt="GRAFCAN Logo">
             </p>
         </div>
       <div class="quarto-title-meta-contents">
@@ -126,7 +127,7 @@ background-size: cover;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Invalid Date</p>
+        <p class="date">September 1, 2025</p>
       </div>
     </div>
     
@@ -178,7 +179,7 @@ background-size: cover;
 
 
 
-<div id="5321a2d7" class="cell" data-execution_count="1">
+<div id="bec2ed92" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 
 <div class="card mb-3" style="padding:10px; background-color:#f8f9fa; border-left: 5px solid #09488bff;">
@@ -189,10 +190,10 @@ background-size: cover;
 <p>Mediante la Orden TER/1235/2023 (E2025001009), el Cabildo de Tenerife encarga a Cartográfica de Canarias S.A. (GRAFCAN) la ejecución de tareas de análisis y depuración del padrón de municipios de menos de 20.000 habitantes, en el marco del proyecto <em>TenerifePadrón 2.0</em>, encuadrado a su vez en la iniciativa <em>Padrón Online</em> del INE.</p>
 <section id="sec-resumen" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Resumen</h1>
-<p>Este documento describe la metodología empleada para la resolución de la Tarea A1 (‘Hogares sin CIV’) , que consiste en la asignación de Código de Identificación de Vivienda (CIV) para aquellos hogares que carecen del mismo. La aproximación se centra en la búsqueda de emparejamientos mediante dirección para los ficheros proporcionados por el INE, así como la comparación contra otras fuentes de datos. Tras un emparejamiento exitoso, se realiza la asignación de CIV para el hogar de acuerdo con el procedimiento dispuesto en la <a href="file:///C:/padron/data/vscode/padron_online/A1/Guia_Técnica_de_Subvenciones.pdf" target="_blank">Guía Técnica de Subvenciones</a>.</p>
+<p>Este documento describe la metodología empleada para la resolución de la Tarea A1 (‘Hogares sin CIV’) , que consiste en la asignación de Código de Identificación de Vivienda (CIV) para aquellos hogares que carecen del mismo. La aproximación se centra en la búsqueda de emparejamientos mediante dirección para los ficheros proporcionados por el INE, así como la comparación contra otras fuentes de datos. Tras un emparejamiento exitoso, se realiza la asignación de CIV para el hogar de acuerdo con el procedimiento dispuesto en la <a href="mapas/Guia_Tecnica_de_Subvenciones.pdf" target="_blank">Guía Técnica de Subvenciones</a>.</p>
 <p>Dada la inexistencia de un mecanismo de emparejamiento unívoco, la variedad en los formatos de nomenclatura y la incompletitud de las descripciones hasta nivel de inmueble, se ha optado por emplear distintos métodos de emparejamiento basados en coincidencia exacta y coincidencia difusa (aplicando primero los más conservadores y optimizando los menos restrictivos para minimizar los falsos positivos), para las direcciones hasta nivel de parcela.</p>
 <p>Los resultados reflejan un <strong>82,25% de asignación</strong> a nivel global tras la comparación con todas las fuentes de datos (asumiendo cierto margen de error para los registros procedentes de coincidencia difusa, si bien se ha trabajado en minimizarlo). Para aquellos registros que forman parte del <strong>residuo (17,75%)</strong>, con correspondiente nueva alta de CIV, se realizó una revisión exhaustiva de los motivos de no asignación, entre los que destacan la falta de descripciones completas en el fichero origen o las fuentes comparadas.</p>
-<p>El desarrollo y resultados de los trabajos se plasman en el presente informe, así como en el <a href="file:////nasdepartamento/Saco/Enrique/padron_online/Atlas_v2.pdf" target="_blank">atlas</a> que muestra la distribución espacial de los hogares y estadísticos más relevantes para cada municipio.</p>
+<p>El desarrollo y resultados de los trabajos se plasman en el presente informe, así como en el <a href="mapas/Atlas_v2.pdf" target="_blank">atlas</a> que muestra la distribución espacial de los hogares y estadísticos más relevantes para cada municipio.</p>
 <section id="información-de-partida-y-análisis-inicial" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="información-de-partida-y-análisis-inicial"><span class="header-section-number">1.1</span> Información de partida y análisis inicial</h2>
 <p>La información proporcionada por el INE es la siguiente:</p>
@@ -266,7 +267,7 @@ Generación de puntos
 </div></li>
 <li><p><strong>Fuentes callejero y cartociudad</strong>: dado que el emparejamiento está asociado a un punto de la capa de portales, se recupera la RC14 por la vía espacial mediante cruce con la geometría vectorial de las parcelas catastrales.</p></li>
 </ul>
-<p>Una vez recuperada la RC14 para aquellos registros con emparejamiento exitoso, se aplica el proceso de generación del CIV a cada hogar de acuerdo con las directrices recogidas en la <a href="file:///C:/padron/data/vscode/padron_online/A1/Guia_Técnica_de_Subvenciones.pdf" target="_blank">Guía Técnica de Subvenciones</a>.</p></li>
+<p>Una vez recuperada la RC14 para aquellos registros con emparejamiento exitoso, se aplica el proceso de generación del CIV a cada hogar de acuerdo con las directrices recogidas en la <a href="mapas/Guia_Tecnica_de_Subvenciones.pdf" target="_blank">Guía Técnica de Subvenciones</a> .</p></li>
 <li><p><strong>Ficheros de salida</strong>:</p>
 <p>Tras la modificación del fichero HS con los nuevos emparejamientos y la generación de altas de viviendas para aquellos registros sin emparejamiento exitoso, se generan los siguientes archivos de salida de acuerdo con la estructura de datos establecida:</p>
 <ul>
@@ -277,7 +278,7 @@ Generación de puntos
 <section id="preparación-del-entorno" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="preparación-del-entorno"><span class="header-section-number">2.1</span> Preparación del entorno</h2>
 <p>Diccionario de abreviaciones:</p>
-<div id="8fb83828" class="cell" data-execution_count="3">
+<div id="0004a976" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SIGLAS_VIA <span class="op">=</span> {</span>
@@ -299,7 +300,7 @@ Generación de puntos
 </details>
 </div>
 <p>Diccionario de vías equivalentes:</p>
-<div id="e4660dea" class="cell" data-execution_count="4">
+<div id="f2d880a4" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>equivalencias_vias <span class="op">=</span> {</span>
@@ -312,7 +313,7 @@ Generación de puntos
 </details>
 </div>
 <p>Diccionario de direcciones que requieren añadir portal para mejorar su emparejamiento:</p>
-<div id="45929d51" class="cell" data-execution_count="5">
+<div id="263e33c4" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>direcciones_con_port <span class="op">=</span> {</span>
@@ -381,7 +382,7 @@ Generación de puntos
 <section id="normalización" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="normalización"><span class="header-section-number">2.2</span> Normalización</h2>
 <p>Definición de funciones de limpieza y normalización de las descripciones:</p>
-<div id="180ba776" class="cell" data-execution_count="6">
+<div id="7fc67040" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> limpiar_texto(texto):</span>
@@ -465,7 +466,7 @@ Generación de puntos
 </details>
 </div>
 <p>Aplicación de funciones de normalización:</p>
-<div id="f676a23e" class="cell" data-execution_count="8">
+<div id="7bfef38f" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalizar direcciones</span></span>
@@ -486,7 +487,7 @@ Generación de puntos
 <h2 data-number="2.3" class="anchored" data-anchor-id="emparejamiento"><span class="header-section-number">2.3</span> Emparejamiento</h2>
 <section id="hs---vv-match-exacto" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="hs---vv-match-exacto"><span class="header-section-number">2.3.1</span> HS - VV (match exacto)</h3>
-<div id="9b94123d" class="cell" data-collapse="true" data-execution_count="9">
+<div id="39615b12" class="cell" data-collapse="true" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA VV (MATCH EXACTO) ===</span></span>
@@ -549,7 +550,7 @@ Generación de puntos
 </section>
 <section id="hs---vv-fuzzy-match" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="hs---vv-fuzzy-match"><span class="header-section-number">2.3.2</span> HS - VV (fuzzy match)</h3>
-<div id="b240c9ea" class="cell" data-collapse="true" data-execution_count="10">
+<div id="71936b6b" class="cell" data-collapse="true" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA VV (FUZZY MATCHING) ===</span></span>
@@ -643,7 +644,7 @@ Generación de puntos
 </section>
 <section id="hs---catastro-match-exacto" class="level3" data-number="2.3.3">
 <h3 data-number="2.3.3" class="anchored" data-anchor-id="hs---catastro-match-exacto"><span class="header-section-number">2.3.3</span> HS - Catastro (match exacto)</h3>
-<div id="9bb7e967" class="cell" data-collapse="true" data-execution_count="11">
+<div id="76bf4ab5" class="cell" data-collapse="true" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA FINCA (MATCH EXACTO) ===</span></span>
@@ -756,7 +757,7 @@ Generación de puntos
 </section>
 <section id="hs---callejero-sitcan-match-exacto-por-código-de-vía" class="level3" data-number="2.3.4">
 <h3 data-number="2.3.4" class="anchored" data-anchor-id="hs---callejero-sitcan-match-exacto-por-código-de-vía"><span class="header-section-number">2.3.4</span> HS - Callejero SITCAN (match exacto por código de vía)</h3>
-<div id="d50ccfae" class="cell" data-collapse="true" data-execution_count="12">
+<div id="54ec1ecd" class="cell" data-collapse="true" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA CALLEJERO (MATCH EXACTO POR CODVIA) ===</span></span>
@@ -880,7 +881,7 @@ Generación de puntos
 </section>
 <section id="hs---catastro-fuzzy-match" class="level3" data-number="2.3.5">
 <h3 data-number="2.3.5" class="anchored" data-anchor-id="hs---catastro-fuzzy-match"><span class="header-section-number">2.3.5</span> HS - Catastro (fuzzy match)</h3>
-<div id="ad03a537" class="cell" data-collapse="true" data-execution_count="13">
+<div id="c48414b3" class="cell" data-collapse="true" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA FINCA (FUZZY MATCHING)  ===</span></span>
@@ -981,7 +982,7 @@ Generación de puntos
 </section>
 <section id="hs---callejero-sitcan-fuzzy-match" class="level3" data-number="2.3.6">
 <h3 data-number="2.3.6" class="anchored" data-anchor-id="hs---callejero-sitcan-fuzzy-match"><span class="header-section-number">2.3.6</span> HS - Callejero SITCAN (fuzzy match)</h3>
-<div id="79f18663" class="cell" data-collapse="true" data-execution_count="14">
+<div id="7305cb5f" class="cell" data-collapse="true" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA CALLEJERO (FUZZY MATCHING POR PORTAL) ===</span></span>
@@ -1191,7 +1192,7 @@ Generación de puntos
 </section>
 <section id="hs---cc-match-exacto" class="level3" data-number="2.3.7">
 <h3 data-number="2.3.7" class="anchored" data-anchor-id="hs---cc-match-exacto"><span class="header-section-number">2.3.7</span> HS - CC (match exacto)</h3>
-<div id="dc0d72ed" class="cell" data-collapse="true" data-execution_count="15">
+<div id="79dddc7c" class="cell" data-collapse="true" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA CC (MATCH EXACTO POR DIRECCION) ===</span></span>
@@ -1316,7 +1317,7 @@ Generación de puntos
 </section>
 <section id="hs---cc-fuzzy-match" class="level3" data-number="2.3.8">
 <h3 data-number="2.3.8" class="anchored" data-anchor-id="hs---cc-fuzzy-match"><span class="header-section-number">2.3.8</span> HS - CC (fuzzy match)</h3>
-<div id="78b97161" class="cell" data-collapse="true" data-execution_count="16">
+<div id="955e1107" class="cell" data-collapse="true" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># === HS CONTRA CC (FUZZY MATCH POR DIRECCION) ===</span></span>
@@ -1511,7 +1512,7 @@ Generación de puntos
 <section id="resultados" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Resultados</h1>
 <p>En esta primera aproximación se ha conseguido la asignación del <strong>82,25 %</strong> del total de registros del fichero HS, distribuida de la siguiente manera según su método y fuente de recuperación:</p>
-<div id="0f52603e" class="cell" data-execution_count="17">
+<div id="33761de0" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1522,7 +1523,7 @@ Generación de puntos
 </div>
 <section id="distribución-por-municipio" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="distribución-por-municipio"><span class="header-section-number">3.1</span> Distribución por municipio</h2>
-<div id="28bdd4f9" class="cell" data-execution_count="18">
+<div id="685803d2" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 
 <figure class="table-responsive figure">
@@ -1867,7 +1868,7 @@ Generación de puntos
 <section id="análisis-del-residuo" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Análisis del residuo</h1>
 <p>Tras varios procesos iterativos de revisión manual de casos, ajuste de los umbrales e implementación de mejoras se ha conseguido rebajar el <strong>residuo global hasta el 17,75 %</strong>.</p>
-<div id="7b660c9f" class="cell" data-execution_count="19">
+<div id="dbedc951" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <table class="dataframe table table-responsive table-sm table-striped small" id="tabla_no_asignados">
 
